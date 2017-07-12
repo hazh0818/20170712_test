@@ -1,0 +1,48 @@
+#
+
+class Quene():
+    def __init__(self,size):
+        self.stack = []
+        self.size = size
+        self.top = 0
+        print('size is ',self.size,'top is ',self.top)
+    def push(self,content):
+        if self.full() == 1:
+            print('quene is already full, top is',self.top)
+        else:
+            self.stack.append(content)
+            self.top = self.top + 1
+            print(content,'has been pushed in the quene')
+            print('now, quene is ', self.stack)
+    def out(self):
+        if self.empty() == 1:
+            print('quene is already empty, top is',self.top)
+        else:
+            print(self.stack[0], 'has been outed of the quene')
+            self.stack.pop(0)
+            self.top = self.top - 1
+            print('now, quene is ', self.stack)
+
+    def full(self):
+        if self.top == self.size:
+            return 1
+        else:
+            return 0
+    def empty(self):
+        if self.top == 0:
+            return 1
+        else:
+            return 0
+
+
+if __name__ == '__main__':
+    z = Quene(3)
+    print(z)
+    z.push(1)
+    z.push(2)
+    z.push(4)
+    z.push(8)
+    z.out()
+    z.out()
+    z.out()
+    z.out()
